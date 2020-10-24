@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { httpClient } from '../utils/axios';
 import { Repo } from '../typings/Repo';
-import { AppError } from '../typings/AppError';
+// import { AppError } from '../typings/AppError';
 
 export const repos = Router();
 

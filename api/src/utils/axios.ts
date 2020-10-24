@@ -8,7 +8,10 @@ import { BASE_API_URL } from './const';
 
 const axiosDefaultConfig = {
   timeout: 1000,
-  headers: { 'X-Custom-Header': 'foobar' },
+  headers: {
+    'X-Custom-Header': 'foobar',
+    'Access-Control-Allow-Origin': '*',
+  },
 };
 
 export interface IHttpClientRequestParameters<T> {
