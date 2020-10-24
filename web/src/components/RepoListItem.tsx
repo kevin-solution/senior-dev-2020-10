@@ -12,22 +12,19 @@ function RepoListItem({ repo }: Props) {
   const [readMe, setReadMe] = useState<string>('');
 
   const showDetail = (fullName: string) => {
-    setOpen(!isOpen);
-
     if (!isOpen) {
-      return;
+      (async () => {
+        const httpClient = new HttpClient({
+          baseURL: 'https://raw.githubusercontent.com',
+        });
+        const response = await httpClient.get<string>({
+          url: `${fullName}/master/README.md`,
+        });
+
+        setReadMe(response);
+      })();
     }
-
-    (async () => {
-      const httpClient = new HttpClient({
-        baseURL: 'https://raw.githubusercontent.com',
-      });
-      const response = await httpClient.get<string>({
-        url: `${fullName}/master/README.md`,
-      });
-
-      setReadMe(response);
-    })();
+    setOpen(!isOpen);
   };
 
   return (
