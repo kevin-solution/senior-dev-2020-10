@@ -10,22 +10,20 @@ repos.get('/', async (_: Request, res: Response) => {
 
   try {
     const response = await httpClient.get<Repo[]>({
-      url: '/repos'
+      url: '/repos',
     });
 
-    const nonForkedRepos = response.filter(repo => !repo.fork);
-    console.log('resp', nonForkedRepos);
+    const nonForkedRepos = response.filter((repo) => !repo.fork);
 
     res.status(200);
     res.json({
       success: true,
       data: nonForkedRepos,
     });
-
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: 'Internal server error'
+      message: 'Internal server error',
     });
   }
 });
