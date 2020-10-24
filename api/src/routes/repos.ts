@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { httpClient } from '../utils/axios';
 import { Repo } from '../typings/Repo';
+import { AppError } from '../typings/AppError';
 
 export const repos = Router();
 
@@ -17,13 +18,13 @@ repos.get('/', async (_: Request, res: Response) => {
 
     res.status(200);
     res.json({
-      success: true,
+      status: 200,
       data: nonForkedRepos,
     });
   } catch (err) {
     res.status(500).json({
-      success: false,
-      message: 'Internal server error',
+      status: 500,
+      message: 'Interval Error',
     });
   }
 });
