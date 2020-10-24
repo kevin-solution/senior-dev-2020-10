@@ -14,7 +14,9 @@ function RepoListItem({ repo }: Props) {
   const showDetail = (fullName: string) => {
     setOpen(!isOpen);
 
-    if (!isOpen) return;
+    if (!isOpen) {
+      return;
+    }
 
     (async () => {
       const httpClient = new HttpClient({
