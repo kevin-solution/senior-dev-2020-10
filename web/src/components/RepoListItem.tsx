@@ -6,7 +6,14 @@ interface Props {
 }
 
 function RepoListItem({ repo }: Props) {
-  return <li>{repo.name}</li>;
+  return (
+    <li>
+      <p>Name: {repo.name}</p>
+      <p>Description: {repo.description}</p>
+      <p>Language: {repo.language}</p>
+      <p>Forks: {repo.forks}</p>
+    </li>
+  );
 }
 
 export default RepoListItem;

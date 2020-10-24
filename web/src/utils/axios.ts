@@ -8,7 +8,7 @@ import applyCaseMiddleware from 'axios-case-converter';
 import { BASE_API_URL } from './const';
 
 const axiosDefaultConfig = {
-  timeout: 1000,
+  timeout: 5000,
 };
 
 export interface IHttpClientRequestParameters<T> {
