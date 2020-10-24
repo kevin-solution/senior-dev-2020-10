@@ -7,7 +7,7 @@ interface Props {
 
 function RepoListItem({ repo }: Props) {
   return (
-    <li>
+    <li className="repo-list-item">
       <p>Name: {repo.name}</p>
       <p>Description: {repo.description}</p>
       <p>Language: {repo.language}</p>

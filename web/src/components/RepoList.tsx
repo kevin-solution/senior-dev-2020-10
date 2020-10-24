@@ -9,7 +9,7 @@ interface Props {
 
 function RepoList({ repos }: Props) {
   return (
-    <ul>
+    <ul className="repo-list">
       {repos.map((repo) => (
         <RepoListItem key={repo.id} repo={repo} />
       ))}

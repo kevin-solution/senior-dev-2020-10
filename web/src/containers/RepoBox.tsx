@@ -4,8 +4,6 @@ import { httpClient } from '../utils/axios';
 
 import RepoList from '../components/RepoList';
 
-import './repobox.css';
-
 interface IResponse {
   status: number;
   data: [Repo];
