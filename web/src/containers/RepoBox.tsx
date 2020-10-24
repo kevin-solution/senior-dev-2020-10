@@ -31,7 +31,7 @@ function RepoBox() {
             const dateA = new Date(repoA.createdAt).getTime();
             const dateB = new Date(repoB.createdAt).getTime();
 
-            return dateA < dateB ? 1 : -1;
+            return dateA - dateB;
           })
         );
       } else {

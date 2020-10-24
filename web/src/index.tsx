@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RepoBox from './containers/RepoBox';
+import App from './App';
 
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RepoBox />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
